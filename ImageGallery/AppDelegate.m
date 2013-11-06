@@ -6,9 +6,11 @@
 //  Copyright (c) 2013 Sandip Saha. All rights reserved.
 //
 
-#import "SettingAppDelegate.h"
+#import "AppDelegate.h"
 
-@implementation SettingAppDelegate
+@implementation AppDelegate
+
+@synthesize imageArrayOfAssetLibrary;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {

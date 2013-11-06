@@ -12,12 +12,22 @@
 		C30519AB1806710900413865 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C30519AA1806710900413865 /* CoreGraphics.framework */; };
 		C30519B11806710900413865 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C30519AF1806710900413865 /* InfoPlist.strings */; };
 		C30519B31806710900413865 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C30519B21806710900413865 /* main.m */; };
-		C30519B71806710900413865 /* SettingAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C30519B61806710900413865 /* SettingAppDelegate.m */; };
+		C30519B71806710900413865 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C30519B61806710900413865 /* AppDelegate.m */; };
 		C30519B91806710900413865 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = C30519B81806710900413865 /* Default.png */; };
 		C30519BB1806710900413865 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C30519BA1806710900413865 /* Default@2x.png */; };
 		C30519BD1806710900413865 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C30519BC1806710900413865 /* Default-568h@2x.png */; };
 		C30519C01806710900413865 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C30519BE1806710900413865 /* MainStoryboard.storyboard */; };
-		C30519C31806710A00413865 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C30519C21806710A00413865 /* SettingViewController.m */; };
+		C30519C31806710A00413865 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C30519C21806710A00413865 /* MainViewController.m */; };
+		C30519D51806737500413865 /* AssetLibraryAccessor.m in Sources */ = {isa = PBXBuildFile; fileRef = C30519D41806737500413865 /* AssetLibraryAccessor.m */; };
+		C30519D71806767C00413865 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C30519D61806767C00413865 /* AssetsLibrary.framework */; };
+		C30519FC180684EE00413865 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C30519FB180684EE00413865 /* QuartzCore.framework */; };
+		C3051A071806C28700413865 /* ScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = C3051A061806C28700413865 /* ScrollView.m */; };
+		C38CB95F1829FD1E001164C3 /* backGround.png in Resources */ = {isa = PBXBuildFile; fileRef = C38CB95E1829FD1E001164C3 /* backGround.png */; };
+		C38CB962182A0299001164C3 /* NSURL+Tag.m in Sources */ = {isa = PBXBuildFile; fileRef = C38CB961182A0299001164C3 /* NSURL+Tag.m */; };
+		C38FB2B0181104EC00AFFAA2 /* ImageResizing.m in Sources */ = {isa = PBXBuildFile; fileRef = C38FB2AF181104EC00AFFAA2 /* ImageResizing.m */; };
+		C3918A711829554E0079E523 /* UIImage+Tag.m in Sources */ = {isa = PBXBuildFile; fileRef = C3918A701829554E0079E523 /* UIImage+Tag.m */; };
+		C39C97E818169AA800FA7B3F /* LibraryAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = C39C97E718169AA800FA7B3F /* LibraryAPI.m */; };
+		C39C97EB18169AD700FA7B3F /* PersistencyManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C39C97EA18169AD700FA7B3F /* PersistencyManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,14 +39,31 @@
 		C30519B01806710900413865 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C30519B21806710900413865 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C30519B41806710900413865 /* ImageGallery-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ImageGallery-Prefix.pch"; sourceTree = "<group>"; };
-		C30519B51806710900413865 /* SettingAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingAppDelegate.h; sourceTree = "<group>"; };
-		C30519B61806710900413865 /* SettingAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingAppDelegate.m; sourceTree = "<group>"; };
+		C30519B51806710900413865 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		C30519B61806710900413865 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		C30519B81806710900413865 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		C30519BA1806710900413865 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		C30519BC1806710900413865 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		C30519BF1806710900413865 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		C30519C11806710A00413865 /* SettingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
-		C30519C21806710A00413865 /* SettingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
+		C30519C11806710A00413865 /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		C30519C21806710A00413865 /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		C30519D31806737500413865 /* AssetLibraryAccessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AssetLibraryAccessor.h; sourceTree = "<group>"; };
+		C30519D41806737500413865 /* AssetLibraryAccessor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AssetLibraryAccessor.m; sourceTree = "<group>"; };
+		C30519D61806767C00413865 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		C30519FB180684EE00413865 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		C3051A051806C28700413865 /* ScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollView.h; sourceTree = "<group>"; };
+		C3051A061806C28700413865 /* ScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollView.m; sourceTree = "<group>"; };
+		C38CB95E1829FD1E001164C3 /* backGround.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backGround.png; sourceTree = "<group>"; };
+		C38CB960182A0299001164C3 /* NSURL+Tag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+Tag.h"; sourceTree = "<group>"; };
+		C38CB961182A0299001164C3 /* NSURL+Tag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+Tag.m"; sourceTree = "<group>"; };
+		C38FB2AE181104EC00AFFAA2 /* ImageResizing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageResizing.h; sourceTree = "<group>"; };
+		C38FB2AF181104EC00AFFAA2 /* ImageResizing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageResizing.m; sourceTree = "<group>"; };
+		C3918A6F1829554E0079E523 /* UIImage+Tag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Tag.h"; sourceTree = "<group>"; };
+		C3918A701829554E0079E523 /* UIImage+Tag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Tag.m"; sourceTree = "<group>"; };
+		C39C97E618169AA800FA7B3F /* LibraryAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LibraryAPI.h; sourceTree = "<group>"; };
+		C39C97E718169AA800FA7B3F /* LibraryAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LibraryAPI.m; sourceTree = "<group>"; };
+		C39C97E918169AD700FA7B3F /* PersistencyManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersistencyManager.h; sourceTree = "<group>"; };
+		C39C97EA18169AD700FA7B3F /* PersistencyManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersistencyManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +71,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C30519FC180684EE00413865 /* QuartzCore.framework in Frameworks */,
+				C30519D71806767C00413865 /* AssetsLibrary.framework in Frameworks */,
 				C30519A71806710900413865 /* UIKit.framework in Frameworks */,
 				C30519A91806710900413865 /* Foundation.framework in Frameworks */,
 				C30519AB1806710900413865 /* CoreGraphics.framework in Frameworks */,
@@ -73,6 +102,8 @@
 		C30519A51806710900413865 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C30519D61806767C00413865 /* AssetsLibrary.framework */,
+				C30519FB180684EE00413865 /* QuartzCore.framework */,
 				C30519A61806710900413865 /* UIKit.framework */,
 				C30519A81806710900413865 /* Foundation.framework */,
 				C30519AA1806710900413865 /* CoreGraphics.framework */,
@@ -83,11 +114,11 @@
 		C30519AC1806710900413865 /* ImageGallery */ = {
 			isa = PBXGroup;
 			children = (
-				C30519B51806710900413865 /* SettingAppDelegate.h */,
-				C30519B61806710900413865 /* SettingAppDelegate.m */,
-				C30519BE1806710900413865 /* MainStoryboard.storyboard */,
-				C30519C11806710A00413865 /* SettingViewController.h */,
-				C30519C21806710A00413865 /* SettingViewController.m */,
+				C39C97E418169A8800FA7B3F /* LibraryAPI */,
+				C30519CE180672C700413865 /* AppDelegate */,
+				C30519CF180672EB00413865 /* storyboard */,
+				C30519D11806730A00413865 /* Model */,
+				C30519D0180672FE00413865 /* controller */,
 				C30519AD1806710900413865 /* Supporting Files */,
 			);
 			path = ImageGallery;
@@ -96,15 +127,78 @@
 		C30519AD1806710900413865 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C30519D21806733100413865 /* Images */,
 				C30519AE1806710900413865 /* ImageGallery-Info.plist */,
 				C30519AF1806710900413865 /* InfoPlist.strings */,
 				C30519B21806710900413865 /* main.m */,
 				C30519B41806710900413865 /* ImageGallery-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C30519CE180672C700413865 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				C30519B51806710900413865 /* AppDelegate.h */,
+				C30519B61806710900413865 /* AppDelegate.m */,
+			);
+			name = AppDelegate;
+			sourceTree = "<group>";
+		};
+		C30519CF180672EB00413865 /* storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				C30519BE1806710900413865 /* MainStoryboard.storyboard */,
+			);
+			name = storyboard;
+			sourceTree = "<group>";
+		};
+		C30519D0180672FE00413865 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				C30519C11806710A00413865 /* MainViewController.h */,
+				C30519C21806710A00413865 /* MainViewController.m */,
+				C3051A051806C28700413865 /* ScrollView.h */,
+				C3051A061806C28700413865 /* ScrollView.m */,
+			);
+			name = controller;
+			sourceTree = "<group>";
+		};
+		C30519D11806730A00413865 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C30519D31806737500413865 /* AssetLibraryAccessor.h */,
+				C30519D41806737500413865 /* AssetLibraryAccessor.m */,
+				C38FB2AE181104EC00AFFAA2 /* ImageResizing.h */,
+				C38FB2AF181104EC00AFFAA2 /* ImageResizing.m */,
+				C3918A6F1829554E0079E523 /* UIImage+Tag.h */,
+				C3918A701829554E0079E523 /* UIImage+Tag.m */,
+				C38CB960182A0299001164C3 /* NSURL+Tag.h */,
+				C38CB961182A0299001164C3 /* NSURL+Tag.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		C30519D21806733100413865 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				C38CB95E1829FD1E001164C3 /* backGround.png */,
 				C30519B81806710900413865 /* Default.png */,
 				C30519BA1806710900413865 /* Default@2x.png */,
 				C30519BC1806710900413865 /* Default-568h@2x.png */,
 			);
-			name = "Supporting Files";
+			name = Images;
+			sourceTree = "<group>";
+		};
+		C39C97E418169A8800FA7B3F /* LibraryAPI */ = {
+			isa = PBXGroup;
+			children = (
+				C39C97E618169AA800FA7B3F /* LibraryAPI.h */,
+				C39C97E718169AA800FA7B3F /* LibraryAPI.m */,
+				C39C97E918169AD700FA7B3F /* PersistencyManager.h */,
+				C39C97EA18169AD700FA7B3F /* PersistencyManager.m */,
+			);
+			name = LibraryAPI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -162,6 +256,7 @@
 				C30519B11806710900413865 /* InfoPlist.strings in Resources */,
 				C30519B91806710900413865 /* Default.png in Resources */,
 				C30519BB1806710900413865 /* Default@2x.png in Resources */,
+				C38CB95F1829FD1E001164C3 /* backGround.png in Resources */,
 				C30519BD1806710900413865 /* Default-568h@2x.png in Resources */,
 				C30519C01806710900413865 /* MainStoryboard.storyboard in Resources */,
 			);
@@ -175,8 +270,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				C30519B31806710900413865 /* main.m in Sources */,
-				C30519B71806710900413865 /* SettingAppDelegate.m in Sources */,
-				C30519C31806710A00413865 /* SettingViewController.m in Sources */,
+				C30519B71806710900413865 /* AppDelegate.m in Sources */,
+				C30519C31806710A00413865 /* MainViewController.m in Sources */,
+				C3918A711829554E0079E523 /* UIImage+Tag.m in Sources */,
+				C30519D51806737500413865 /* AssetLibraryAccessor.m in Sources */,
+				C38CB962182A0299001164C3 /* NSURL+Tag.m in Sources */,
+				C3051A071806C28700413865 /* ScrollView.m in Sources */,
+				C38FB2B0181104EC00AFFAA2 /* ImageResizing.m in Sources */,
+				C39C97E818169AA800FA7B3F /* LibraryAPI.m in Sources */,
+				C39C97EB18169AD700FA7B3F /* PersistencyManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,6 +395,7 @@
 				C30519C81806710A00413865 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

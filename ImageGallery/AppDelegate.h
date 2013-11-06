@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SettingAppDelegate : UIResponder <UIApplicationDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+
+@property (strong, nonatomic) NSArray *imageArrayOfAssetLibrary;
 
 @end
