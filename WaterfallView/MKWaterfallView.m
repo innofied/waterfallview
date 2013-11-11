@@ -55,7 +55,7 @@
                                      noOfColumn:(int)noOfColumn
 {
     backgroundImageview.image = backgroundImage;
-    [self initilizeColumnHeight];
+    [self initializeColumnHeight];
     
     // Check if user set arrayOfUIImageSource or not
     if (arrayOfUIImageSource == nil ||[arrayOfUIImageSource count] == 0) {
@@ -148,7 +148,7 @@
                                             OfColumnNo:(int)noOfColumn
 {
     backgroundImageview.image = backgroundImage;
-    [self initilizeColumnHeight];
+    [self initializeColumnHeight];
     
     // Check if user set arrayOfImageUrlStringSource or not
     if (arrayOfImageUrlStringSource == nil ||[arrayOfImageUrlStringSource count] == 0) {
@@ -259,7 +259,7 @@
     NSLog(@"****************************************");
 }
 
--(void) initilizeColumnHeight
+-(void) initializeColumnHeight
 {
     for (int i=0; i< 10; i++) {
         arrayOfColumnHeight[i] = self.widthOfGapBtnViewColumnsInScrollView;
