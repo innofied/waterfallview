@@ -218,7 +218,6 @@
                 
                 
                 CGRect imageFrame = CGRectMake(minimumHeightX, minimumHeight, image.size.width, image.size.height);
-                minimumHeight=imageFrame.origin.y+image.size.height+heightOfGapBtnImageOfSameColumn;
                 UIImageView *imageView=[[UIImageView alloc]initWithFrame:imageFrame];
                 
                 
@@ -231,7 +230,7 @@
                 NSLog(@"###image tag %i",individual);
                 [self.scrollViewOfImages addSubview:imageView];
                 
-                
+                minimumHeight=imageFrame.origin.y+image.size.height+heightOfGapBtnImageOfSameColumn;
                 arrayOfColumnHeight[minimumHeightColumnIndex] = minimumHeight;
                 
                 

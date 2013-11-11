@@ -23,10 +23,6 @@
 @synthesize scrollView;
 @synthesize imageUrlArray;
 
-@synthesize widthOfColumnInScrollView;
-@synthesize widthOfGapBtnColumnsInScrollView;
-@synthesize widthOfGapBtnViewColumnsInScrollView;
-@synthesize heightOfGapBtnImageOfSameColumn;
 
 
 
@@ -36,12 +32,69 @@
 	// Do any additional setup after loading the view, typically from a nib.
     
     imageUrlArray = [[NSMutableArray alloc] initWithCapacity:1];
+    
+    // get Device Screen size to support all type of screen
+    [self getScreenSize];
+    
+    recognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapGestureRecognized:)];
+    
+    [self scrollViewWithNoOfColumn:3];
+    
+}
+
+
+/*********************************************************************************
+ Animate Rotation
+ *********************************************************************************/
+
+- (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
+{
+    if (toInterfaceOrientation == UIInterfaceOrientationLandscapeLeft ||
+        toInterfaceOrientation == UIInterfaceOrientationLandscapeRight)
+    {
+        
+        [self getScreenSize];
+        
+        // remove the earlier view
+        [self.scrollView removeFromSuperview];
+        
+        // create new view
+        [self scrollViewWithNoOfColumn:5];
+        
+        NSLog(@"Change to custom UI for landscape");
+        
+        
+    }
+    else if (toInterfaceOrientation == UIInterfaceOrientationPortrait ||
+             toInterfaceOrientation == UIInterfaceOrientationPortraitUpsideDown)
+    {
+        
+        
+        [self getScreenSize];
+        
+        [self.scrollView removeFromSuperview];
+        
+        [self scrollViewWithNoOfColumn:3];
+        
+        NSLog(@"Change to custom UI for portrait");
+        
+    }
+}
+
+- (void) getScreenSize
+{
+    // get screen size
     frameOfScreen = [[UIScreen mainScreen] bounds];
     widthOfScreen = frameOfScreen.size.width;
     heightOfScreen = frameOfScreen.size.height;
     NSLog(@"widthOfScreen : %f heightOfscren %f",widthOfScreen,heightOfScreen);
+}
+
+- (void) scrollViewWithNoOfColumn:(int)noOfColumn
+{
+    
     scrollView = [[MKWaterfallView alloc] initWithFrame:CGRectMake(0, 0, widthOfScreen   , heightOfScreen)];
-    scrollView.widthOfColumnInScrollView           =(widthOfScreen-20)/3;
+    scrollView.widthOfColumnInScrollView           =(widthOfScreen-20)/noOfColumn;
     scrollView.widthOfGapBtnColumnsInScrollView    =5;
     scrollView.widthOfGapBtnViewColumnsInScrollView=5;
     scrollView.heightOfGapBtnImageOfSameColumn     =5;
@@ -55,16 +108,19 @@
     [self.view addSubview:scrollView];
     
     
-    //----------------
-    // using image url
-    //----------------
+    //------------------------
+    // add Images to the View
+    //------------------------
     [self addUrlToImageUrlArray];
     [self.scrollView addSubviewToScrollViewFromImageUrlStringArray:imageUrlArray OfColumnNo:3];
     
-    recognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapGestureRecognized:)];
-    [self.scrollView.scrollViewOfImages addGestureRecognizer:recognizer];
     
+    //--------------------------
+    // add TapGestureRecognizer
+    //--------------------------
+    [self.scrollView.scrollViewOfImages addGestureRecognizer:recognizer];
 }
+
 
 - (void) tapGestureRecognized:(UITapGestureRecognizer*)gesture
 {
@@ -125,72 +181,5 @@
     [imageUrlArray addObject:@"http://4.bp.blogspot.com/-ik3E8PBBf70/TwaZ9PMNbrI/AAAAAAAAAG0/kNrGnEbZ-WY/s640/flowers2.jpg"];
 }
 
-
-/*********************************************************************************
- Animate Rotation
- *********************************************************************************/
-
-- (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
-{
-    if (toInterfaceOrientation == UIInterfaceOrientationLandscapeLeft ||
-        toInterfaceOrientation == UIInterfaceOrientationLandscapeRight)
-    {
-        
-        frameOfScreen = [[UIScreen mainScreen] bounds];
-        widthOfScreen = frameOfScreen.size.width;
-        heightOfScreen = frameOfScreen.size.height;
-        NSLog(@"widthOfScreen : %f heightOfscren %f",widthOfScreen,heightOfScreen);
-        
-        [self.scrollView removeFromSuperview];
-        scrollView = [[MKWaterfallView alloc] initWithFrame:CGRectMake(0, 0, heightOfScreen   , widthOfScreen)];
-        
-        scrollView.widthOfColumnInScrollView           =(heightOfScreen-30)/5;
-        scrollView.widthOfGapBtnColumnsInScrollView    =5;
-        scrollView.widthOfGapBtnViewColumnsInScrollView=5;
-        scrollView.heightOfGapBtnImageOfSameColumn     =5;
-        
-        scrollView.widthOfBorderSurroundedImage        =5;
-        scrollView.colorOfBorderSurroundedImage        =[[UIColor blackColor] colorWithAlphaComponent:.65];
-        scrollView.cornerRadiusOfImage                 =5;
-        scrollView.isMaskedTheCornerOfImage            =YES;
-        
-        scrollView.backgroundImage                     = [UIImage imageNamed:@"backGround.png"];
-        [self.view addSubview:scrollView];
-        [self.scrollView addSubviewToScrollViewFromImageUrlStringArray:imageUrlArray OfColumnNo:5];
-        [self.scrollView addGestureRecognizer:recognizer];
-        NSLog(@"Change to custom UI for landscape");
-        
-        
-    }
-    else if (toInterfaceOrientation == UIInterfaceOrientationPortrait ||
-             toInterfaceOrientation == UIInterfaceOrientationPortraitUpsideDown)
-    {
-        frameOfScreen = [[UIScreen mainScreen] bounds];
-        widthOfScreen = frameOfScreen.size.width;
-        heightOfScreen = frameOfScreen.size.height;
-        NSLog(@"widthOfScreen : %f heightOfscren %f",widthOfScreen,heightOfScreen);
-        
-        
-        [self.scrollView removeFromSuperview];
-        scrollView = [[MKWaterfallView alloc] initWithFrame:CGRectMake(0, 0, widthOfScreen   , heightOfScreen)];
-        
-        scrollView.widthOfColumnInScrollView           =(widthOfScreen-20)/3;
-        scrollView.widthOfGapBtnColumnsInScrollView    =5;
-        scrollView.widthOfGapBtnViewColumnsInScrollView=5;
-        scrollView.heightOfGapBtnImageOfSameColumn     =5;
-        
-        scrollView.widthOfBorderSurroundedImage        =5;
-        scrollView.colorOfBorderSurroundedImage        =[[UIColor blackColor] colorWithAlphaComponent:.65];
-        scrollView.cornerRadiusOfImage                 =5;
-        scrollView.isMaskedTheCornerOfImage            =YES;
-        
-        scrollView.backgroundImage                     = [UIImage imageNamed:@"backGround.png"];
-        [self.view addSubview:scrollView];
-        [self.scrollView addSubviewToScrollViewFromImageUrlStringArray:imageUrlArray OfColumnNo:3];
-        [self.scrollView addGestureRecognizer:recognizer];
-        NSLog(@"Change to custom UI for portrait");
-        
-    }
-}
 
 @end
