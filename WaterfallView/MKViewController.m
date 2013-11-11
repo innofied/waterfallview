@@ -32,9 +32,8 @@
 	// Do any additional setup after loading the view, typically from a nib.
     
     imageUrlArray = [[NSMutableArray alloc] initWithCapacity:1];
+    [self addUrlToImageUrlArray];
     
-    // get Device Screen size to support all type of screen
-    [self getScreenSize];
     
     recognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapGestureRecognized:)];
     
@@ -52,8 +51,7 @@
     if (toInterfaceOrientation == UIInterfaceOrientationLandscapeLeft ||
         toInterfaceOrientation == UIInterfaceOrientationLandscapeRight)
     {
-        
-        [self getScreenSize];
+        // LandScape mode
         
         // remove the earlier view
         [self.scrollView removeFromSuperview];
@@ -68,9 +66,7 @@
     else if (toInterfaceOrientation == UIInterfaceOrientationPortrait ||
              toInterfaceOrientation == UIInterfaceOrientationPortraitUpsideDown)
     {
-        
-        
-        [self getScreenSize];
+        // Portrait mode
         
         [self.scrollView removeFromSuperview];
         
@@ -93,8 +89,18 @@
 - (void) scrollViewWithNoOfColumn:(int)noOfColumn
 {
     
-    scrollView = [[MKWaterfallView alloc] initWithFrame:CGRectMake(0, 0, widthOfScreen   , heightOfScreen)];
-    scrollView.widthOfColumnInScrollView           =(widthOfScreen-20)/noOfColumn;
+    // get Device Screen size to support all type of screen
+    [self getScreenSize];
+    
+    if (noOfColumn > 4) {
+        scrollView = [[MKWaterfallView alloc] initWithFrame:CGRectMake(0, 0, heightOfScreen   , widthOfScreen)];
+        scrollView.widthOfColumnInScrollView           =(heightOfScreen-30)/noOfColumn;
+    } else {
+        scrollView = [[MKWaterfallView alloc] initWithFrame:CGRectMake(0, 0, widthOfScreen   , heightOfScreen)];
+        scrollView.widthOfColumnInScrollView           =(widthOfScreen-20)/noOfColumn;
+    }
+    
+    
     scrollView.widthOfGapBtnColumnsInScrollView    =5;
     scrollView.widthOfGapBtnViewColumnsInScrollView=5;
     scrollView.heightOfGapBtnImageOfSameColumn     =5;
@@ -111,8 +117,7 @@
     //------------------------
     // add Images to the View
     //------------------------
-    [self addUrlToImageUrlArray];
-    [self.scrollView addSubviewToScrollViewFromImageUrlStringArray:imageUrlArray OfColumnNo:3];
+    [self.scrollView addSubviewToScrollViewFromImageUrlStringArray:imageUrlArray OfColumnNo:noOfColumn];
     
     
     //--------------------------
