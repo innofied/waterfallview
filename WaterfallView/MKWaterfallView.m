@@ -44,9 +44,7 @@
         [self addSubview:backgroundImageview];
         [self addSubview:scrollViewOfImages];
         
-        for (int i=0; i< 10; i++) {
-            arrayOfColumnHeight[i] = 5;
-        }
+        
         
     }
     return self;
@@ -57,6 +55,7 @@
                                      noOfColumn:(int)noOfColumn
 {
     backgroundImageview.image = backgroundImage;
+    [self initilizeColumnHeight];
     
     // Check if user set arrayOfUIImageSource or not
     if (arrayOfUIImageSource == nil ||[arrayOfUIImageSource count] == 0) {
@@ -149,7 +148,7 @@
                                             OfColumnNo:(int)noOfColumn
 {
     backgroundImageview.image = backgroundImage;
-    
+    [self initilizeColumnHeight];
     
     // Check if user set arrayOfImageUrlStringSource or not
     if (arrayOfImageUrlStringSource == nil ||[arrayOfImageUrlStringSource count] == 0) {
@@ -184,6 +183,7 @@
             image = [UIImage imageWithData:imageData];
             [image setTag:[imageUrl tag]];
             NSLog(@"#image tag %i %@",[image tag],image);
+            
             dispatch_async(dispatch_get_main_queue(), ^{
                 NSLog(@"##image tag %i %@",[image tag],image);
                 int individual = [image tag];
@@ -257,6 +257,13 @@
     NSLog(@"#      ScrollView.m console o/p        #");
     NSLog(@"#      NO of Image :: %ld              #",(unsigned long)[arrayOfImageUrlStringSource count]);
     NSLog(@"****************************************");
+}
+
+-(void) initilizeColumnHeight
+{
+    for (int i=0; i< 10; i++) {
+        arrayOfColumnHeight[i] = self.widthOfGapBtnViewColumnsInScrollView;
+    }
 }
 
 @end
