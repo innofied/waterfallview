@@ -39,7 +39,7 @@
     widthOfScreen = frameOfScreen.size.width;
     heightOfScreen = frameOfScreen.size.height;
     NSLog(@"widthOfScreen : %f heightOfscren %f",widthOfScreen,heightOfScreen);
-    scrollView = [[ScrollView alloc] initWithFrame:CGRectMake(0, 0, widthOfScreen   , heightOfScreen)];
+    scrollView = [[MKImageGalleryScrollView alloc] initWithFrame:CGRectMake(0, 0, widthOfScreen   , heightOfScreen)];
     scrollView.widthOfColumnInScrollView           =100;
     scrollView.widthOfGapBtnColumnsInScrollView    =5;
     scrollView.widthOfGapBtnViewColumnsInScrollView=5;
@@ -63,16 +63,15 @@
     recognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapGestureRecognized:)];
     [self.scrollView.scrollViewOfImages addGestureRecognizer:recognizer];
     
-    /*
      // get picture from asset library
-     
+     /*
      assetLibraryAccessor = [[AssetLibraryAccessor alloc] init];
      [assetLibraryAccessor getAllPictures]; 
      
     __unsafe_unretained typeof(self) weakSelf = self;
     [assetLibraryAccessor setCompletionHandler:^{
         
-        //weakSelf.scrollView.arrayOfUIImage = weakSelf.assetLibraryAccessor.imageArrayOfAssetLibraryAccessor;
+        NSArray *arrayOfImages = weakSelf.assetLibraryAccessor.imageArrayOfAssetLibraryAccessor;
         //[weakSelf.scrollView addSubviewToScrollViewFromUIImageOfColumnNo:3];
         
         
@@ -80,13 +79,9 @@
         weakSelf.widthOfGapBtnColumnsInScrollView    =5;
         weakSelf.widthOfGapBtnViewColumnsInScrollView=5;
         weakSelf.heightOfGapBtnImageOfSameColumn     =5;
-        [weakSelf addSubviewToScrollView:3];
-        
-        
+        [weakSelf.scrollView addSubviewToScrollViewFromUIImageArray:arrayOfImages noOfColumn:3];
     }];
-     */
-    
-    
+    */
     
 }
 
@@ -101,7 +96,7 @@
         
         if (CGRectContainsPoint(view.frame, tapLocation)) {
             
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Message" message:[NSString stringWithFormat:@"You have clicked on %i",view.tag] delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Message" message:[NSString stringWithFormat:@"You have clicked on %li",(long)view.tag] delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
             [alert show];
             
             break;
@@ -146,9 +141,9 @@
     [imageUrlArray addObject:@"http://thefabweb.com/wp-content/uploads/2012/06/88.jpg"];
     [imageUrlArray addObject:@"http://bookurgift.com/images/111.jpg"];
     [imageUrlArray addObject:@"http://images4.fanpop.com/image/photos/23800000/Pink-flowers-pink-color-23830799-1920-1233.jpg"];
-    [imageUrlArray addObject:@"http://wallike.com/wp-content/uploads/2013/04/beautiful-flowers-wallpaper-1280x800.jpg"];
+    
     [imageUrlArray addObject:@"http://4.bp.blogspot.com/-ik3E8PBBf70/TwaZ9PMNbrI/AAAAAAAAAG0/kNrGnEbZ-WY/s640/flowers2.jpg"];
-    [imageUrlArray addObject:@"http://good-wallpapers.com/animals/21045"];
+    
     
 }
 
@@ -163,7 +158,7 @@
         toInterfaceOrientation == UIInterfaceOrientationLandscapeRight)
     {
         [self.scrollView removeFromSuperview];
-        scrollView = [[ScrollView alloc] initWithFrame:CGRectMake(0, 0, heightOfScreen   , widthOfScreen)];
+        scrollView = [[MKImageGalleryScrollView alloc] initWithFrame:CGRectMake(0, 0, heightOfScreen   , widthOfScreen)];
         
         scrollView.widthOfColumnInScrollView           =100;
         scrollView.widthOfGapBtnColumnsInScrollView    =5;
@@ -190,7 +185,7 @@
              toInterfaceOrientation == UIInterfaceOrientationPortraitUpsideDown)
     {
         [self.scrollView removeFromSuperview];
-        scrollView = [[ScrollView alloc] initWithFrame:CGRectMake(0, 0, widthOfScreen   , heightOfScreen)];
+        scrollView = [[MKImageGalleryScrollView alloc] initWithFrame:CGRectMake(0, 0, widthOfScreen   , heightOfScreen)];
         
         scrollView.widthOfColumnInScrollView           =100;
         scrollView.widthOfGapBtnColumnsInScrollView    =5;

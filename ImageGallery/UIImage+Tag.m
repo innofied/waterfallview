@@ -19,6 +19,6 @@ static char const * const ObjectTagKey = "ObjectTag";
 
 -(int) tag
 {
-    return [objc_getAssociatedObject(self, ObjectTagKey) integerValue];
+    return (int)[objc_getAssociatedObject(self, ObjectTagKey) integerValue];
 }
 @end

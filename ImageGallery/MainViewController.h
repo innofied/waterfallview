@@ -10,7 +10,7 @@
 
 @interface MainViewController : UIViewController
 @property (nonatomic, strong) AssetLibraryAccessor *assetLibraryAccessor;
-@property (strong, nonatomic) ScrollView *scrollView;
+@property (strong, nonatomic) MKImageGalleryScrollView *scrollView;
 @property (strong, nonatomic) NSMutableArray *imageUrlArray;
 
 @property ( nonatomic) NSInteger widthOfGapBtnColumnsInScrollView;

@@ -11,10 +11,12 @@
 #import "NSURL+Tag.h"
 #import "UIImage+Tag.h"
 
-@interface ScrollView : UIView
+@interface MKImageGalleryScrollView : UIView
 
 
 @property (strong, nonatomic)   UIScrollView    *scrollViewOfImages;
+@property (strong, nonatomic)   NSMutableDictionary  *dictionaryOfImages;
+@property (strong, nonatomic)   NSMutableDictionary  *dictionaryOfImageViews;
 
 //-----------------------------------------------------------------
 //  Following property must be set by the user before method call
@@ -53,5 +55,11 @@
 - (void) addSubviewToScrollViewFromImageUrlStringArray:(NSArray *)arrayOfImageUrlStringSource
                                             OfColumnNo:(int)noOfColumn;
 
+//-----------------------------------------------------------------
+//  If you have several image URL, image-size known. then use it.
+//-----------------------------------------------------------------
+- (void) addSubviewToScrollViewFromPhotoArray:(NSArray *)arrayOfPhoto
+                                            OfColumnNo:(int)noOfColumn
+                                    withKnownImageSize:(BOOL)isImageSizeKnown;
 
 @end

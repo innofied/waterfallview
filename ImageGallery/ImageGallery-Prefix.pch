@@ -15,5 +15,5 @@
     #import "AssetLibraryAccessor.h"
     #import "AppDelegate.h"
     #import <QuartzCore/QuartzCore.h>
-    #import "ScrollView.h"
+    #import "MKImageGalleryScrollView.h"
 #endif
