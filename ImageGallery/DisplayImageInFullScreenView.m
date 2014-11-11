@@ -6,11 +6,11 @@
 //  Copyright (c) 2014 Innofied Solutions Pvt. Ltd. All rights reserved.
 //
 
-#import "GalleryDisplayView.h"
+#import "DisplayImageInFullScreenView.h"
 #import "RMGalleryView.h"
 #import "UIImage+RMGalleryDemo.h"
 
-@interface GalleryDisplayView() <RMGalleryViewDataSource,RMGalleryViewDelegate>
+@interface DisplayImageInFullScreenView() <RMGalleryViewDataSource,RMGalleryViewDelegate>
 {
     UILabel *titleLabel;
     NSString *title;
@@ -19,7 +19,7 @@
 }
 @end
 
-@implementation GalleryDisplayView
+@implementation DisplayImageInFullScreenView
 
 - (instancetype)initWithFrame:(CGRect)frame
 {
@@ -164,7 +164,6 @@
     RMGalleryCell *galleryCell = [galleryView galleryCellAtIndex:index];
     UIImage *image = galleryCell.image;
     if (!image) return;
-    
     
 }
 

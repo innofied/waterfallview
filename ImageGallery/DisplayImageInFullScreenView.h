@@ -17,7 +17,7 @@
 
 @end
 
-@interface GalleryDisplayView : UIView
+@interface DisplayImageInFullScreenView : UIView
 @property (nonatomic) int countOfImages;
 @property (nonatomic,weak) MKImageGalleryScrollView *imageGalleryScrollView;
 @property (nonatomic,weak) UIButton *closeButton;

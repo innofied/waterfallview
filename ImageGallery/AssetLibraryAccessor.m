@@ -43,7 +43,7 @@ static int count=0;
                                  if (self.completionHandler) {
                                      self.completionHandler();
                                  }
-                                 NSLog(@"Image :: %i",[imageArrayOfAssetLibraryAccessor count]);
+                                 NSLog(@"Image :: %lu",(unsigned long)[imageArrayOfAssetLibraryAccessor count]);
                                  //[self allPhotosCollected:imageArray];
                              }
                          }
@@ -59,7 +59,7 @@ static int count=0;
         if(group != nil) {
             [group enumerateAssetsUsingBlock:assetEnumerator];
             [assetGroups addObject:group];
-            count=[group numberOfAssets];
+            count=(int)[group numberOfAssets];
         }
     };
     

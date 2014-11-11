@@ -61,7 +61,7 @@
     [self.scrollView addSubviewToScrollViewFromImageUrlStringArray:imageUrlArray OfColumnNo:3];
     
     recognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapGestureRecognized:)];
-    [self.scrollView.scrollViewOfImages addGestureRecognizer:recognizer];
+    //[self.scrollView.scrollViewOfImages addGestureRecognizer:recognizer];
     
      // get picture from asset library
      /*
@@ -127,7 +127,6 @@
     [imageUrlArray addObject:@"http://img.tradeindia.com/fp/1/377/778.jpg"];
     [imageUrlArray addObject:@"http://behance.vo.llnwd.net/profiles17/1327451/projects/4862239/b3d14c57055cd37557105b6d0baebcfc.jpg"];
     [imageUrlArray addObject:@"http://3.bp.blogspot.com/-ls3LcSetQdw/TmUwikE1ljI/AAAAAAAAFtM/MU87FnNvXT4/s1600/mobile_wallpaper_nature%2B%25281%2529.jpg"];
-    [imageUrlArray addObject:@"http://3.bp.blogspot.com/-8GMksL8RcYs/UdSpG5NMPjI/AAAAAAAAAkM/VgHJgnxnGmw/s760/clouds-and-sunrays.jpg"];
     [imageUrlArray addObject:@"http://cache4.indulgy.net/j3/z4/b/0203a4b04dd7c1XL.jpg"];
     [imageUrlArray addObject:@"http://carlylove.files.wordpress.com/2011/07/016.jpg"];
     [imageUrlArray addObject:@"http://4.bp.blogspot.com/-uc1hO9wWYnY/T-3ir12mTVI/AAAAAAAAOy4/9mx0UP3Hq6A/s1600/Leonid+Andreyev++Vammasluu+At+Sunset.jpg"];
@@ -160,7 +159,7 @@
         [self.scrollView removeFromSuperview];
         scrollView = [[MKImageGalleryScrollView alloc] initWithFrame:CGRectMake(0, 0, heightOfScreen   , widthOfScreen)];
         
-        scrollView.widthOfColumnInScrollView           =100;
+        scrollView.widthOfColumnInScrollView           =([UIScreen mainScreen].bounds.size.width - 30)/5;
         scrollView.widthOfGapBtnColumnsInScrollView    =5;
         scrollView.widthOfGapBtnViewColumnsInScrollView=5;
         scrollView.heightOfGapBtnImageOfSameColumn     =5;
@@ -187,7 +186,7 @@
         [self.scrollView removeFromSuperview];
         scrollView = [[MKImageGalleryScrollView alloc] initWithFrame:CGRectMake(0, 0, widthOfScreen   , heightOfScreen)];
         
-        scrollView.widthOfColumnInScrollView           =100;
+        scrollView.widthOfColumnInScrollView           =([UIScreen mainScreen].bounds.size.width - 20)/5;
         scrollView.widthOfGapBtnColumnsInScrollView    =5;
         scrollView.widthOfGapBtnViewColumnsInScrollView=5;
         scrollView.heightOfGapBtnImageOfSameColumn     =5;
